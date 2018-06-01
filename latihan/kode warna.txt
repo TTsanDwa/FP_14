@@ -1,3 +1,0 @@
-code warna biru:#005bbc
-code warna abu-abu:#555;
-font-family: Arial, Helvetica, sans-serif;
