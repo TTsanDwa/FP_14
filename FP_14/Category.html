@@ -1,0 +1,999 @@
+<html lang="en">
+<head>
+    <title>Paradise Indonesia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .container{
+            /*padding: 80px 120px;*/
+            position: relative;
+            margin-top: 20;
+        }
+        .container img {
+        width: 50%;
+        height: auto;
+        }
+        .tes{
+            opacity: 50%;
+        }
+        .logo{
+            height: auto;
+        }
+        #navbar{
+            transition: top 0.5s;
+        }
+        .navbar-inverse{
+            background-color: transparent;
+        }
+        .menu{
+            color: white;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            border: 0;
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+        .navbar li a, .navbar{ 
+            color: white;
+        }
+        .navbar-nav li a:hover {
+            background-color: transparent;
+            border: 1px solid black;
+        }
+        .navbar-nav li.active a {
+            color: #fff;
+            background-color:#29292c;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+        footer {
+            background-color: #2d2d30;
+            color: #f5f5f5;
+            padding: 32px;
+            margin-top: 20px
+        }
+        footer a {
+            color: #f5f5f5;
+        }
+        footer a:hover {
+            color: #777;
+            text-decoration: none;
+        }
+        .beach{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 29px;
+            margin-left: 152px;
+            height: 90%;
+            width: 50%;
+            opacity: 0;
+            transition: .2s ease;
+            background-image: url(image/category/beach2.png);
+            background-size: 280px 280px;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+        .overlay:hover .beach{
+            opacity: 1;
+        }
+        .family{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 29px;
+            margin-left: 152px;
+            height: 90%;
+            width: 50%;
+            opacity: 0;
+            transition: .2s ease;
+            background-image: url(image/category/family2.png);
+            background-size: 280px 280px;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+        .overlay:hover .family{
+            opacity: 1;
+        }
+        .nature{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 29px;
+            margin-left: 152px;
+            height: 90%;
+            width: 50%;
+            opacity: 0;
+            transition: .2s ease;
+            background-image: url(image/category/nature%20katalog2.png);
+            background-size: 280px 280px;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+        .overlay:hover .nature{
+            opacity: 1;
+        }
+        .romantic{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 29px;
+            margin-left: 152px;
+            height: 90%;
+            width: 50%;
+            opacity: 0;
+            transition: .2s ease;
+            background-image: url(image/category/romantic2.png);
+            background-size: 280px 280px;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+        .overlay:hover .romantic{
+            opacity: 1;
+        }
+        body{
+            background-image: url(image/bg%2010000.jpg);
+            background-repeat: repeat;
+        }
+        .content2{
+            background-color: greenyellow;
+        }
+        .definisi{
+            margin-top: 15px;
+            margin-left: -10px;
+            font-size: 26px;
+            font-family: calibri;
+        }
+        .definisi1{
+            margin-top: 15px;
+            margin-left: -10px;
+            font-size: 22px;
+            font-family: calibri;
+        }
+        footer{
+            background-color: #3ac3c1;
+        }
+        .colum {
+            float: left;
+            width: 26%;
+            padding: 10px;
+            height: 100px;
+            margin-top: -30px;
+        }
+        .colum1 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 100px;
+        }
+        #garis:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .karakter2{
+            margin-top: -399px;
+            margin-left: 30px;
+            
+        }
+        .kakitext{
+            font-size: 24px;
+        }
+    </style>
+    
+    <!--JQuery-->
+    <script>
+            $(document).ready(function(){
+                $("#content1").hide();
+                $("#button1").click(function(){
+                    $("#content1").show();
+                    $("#content2").hide();
+                    $("#content3").hide();
+                    $("#content4").hide();                    
+                });
+            });
+        </script>
+    <script>
+            $(document).ready(function(){
+                $("#content2").hide();
+                $("#button2").click(function(){
+                    $("#content2").show();
+                    $("#content1").hide(); 
+                    $("#content3").hide(); 
+                    $("#content4").hide(); 
+                });
+            });
+        </script>
+    <script>
+            $(document).ready(function(){
+                $("#content3").hide();
+                $("#button3").click(function(){
+                    $("#content3").show();
+                    $("#content1").hide();   
+                    $("#content2").hide(); 
+                    $("#content4").hide(); 
+                });
+            });
+        </script>
+    <script>
+            $(document).ready(function(){
+                $("#content4").hide();
+                $("#button4").click(function(){
+                    $("#content4").show();
+                    $("#content1").hide();    
+                    $("#content2").hide(); 
+                    $("#content3").hide(); 
+                });
+            });
+        </script>
+    <script>
+    $(document).ready(function(){
+        /*$('body').scrollspy({target: "#tombol", offset: 50});*/ 
+        $("a, footer a[href='pagetop']").on('click', function(Event){
+            if(this.hash !== ""){
+                event.preventDefault();
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    window.location.hash = hash;
+                });
+            }  
+        });
+    });
+    </script>
+    
+</head>
+<body id="pagetop">
+    
+    <!--NAVBAR-->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color: grey">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="after.html"><img src="image/index/home.png" width="auto" height="60px" style="margin-top: 15px;"> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a class="menu" href="Category.html" style="color: #3ac3c1"><b><u>CATEGORY</u></b></a></li>
+          <li><a class="menu" href="trending.html" style="color: white"><b>TRENDING</b></a></li>
+          <li><a class="menu" href="Login.html" style="color: white"><b>LOGIN</b></a></li>
+          <li><a class="menu" href="estimation.html" style="color: white"><b>ESTIMATION</b></a></li>
+          <li><a class="menu" href="#" style="color: white"><b><span class="glyphicon glyphicon-search"></span></b></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+    <!--CONTENT Header-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="image/category/borobudur.jpg" alt="Borobudur">
+          <div class="carousel-caption">
+<!--            <h3>Pantai Nglambor</h3>
+            <p>Feel the air and see the beautiful ocean.</p>-->
+          </div> 
+        </div>
+
+        <div class="item">
+          <img src="image/category/air%20terjun%20geddad.jpg" alt="Air Terjun Geddad">
+          <div class="carousel-caption">
+<!--            <h3>Air Terjun Geddad</h3>
+            <p>Beautifull waterfall.</p>-->
+          </div> 
+        </div>
+
+        <div class="item">
+          <img src="image/category/merapi%20tour.jpg" alt="Merapi Tour">
+          <div class="carousel-caption">
+<!--            <h3>Merapi Tour</h3>
+            <p>Feel the indonesian active mountain.</p>-->
+          </div> 
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+</div>
+    
+    <!--CONTENT MENU-->
+<div class="container text-center">
+      <div class="row" id="tombol">
+            <div class="col-sm-6" style="background-color: transparent">
+                <p><strong></strong></p><br>
+                <a class="overlay" id="button1" href="#content1">
+                    <img src="image/category/beach.png" alt="Random Name" width="200px" height="200px" >
+                    <div class="beach"><!--<img src="image/category/beach2.png" style="margin-top: 22px">--> </div>        
+                </a> 
+            </div>
+            <div class="col-sm-6">
+              <p><strong></strong></p><br>
+              <a class="overlay" id="button2" href="#content2">
+                  <img src="image/category/family.png" alt="Random Name" width="200px" height="200px">
+                  <div class="family"><!--<img src="image/category/family2.png" style="margin-top: 22px"> --></div></a>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-lg-6">
+                <p><strong></strong></p><br>
+                <a class="overlay" id="button3" href="#content3">
+                    <img src="image/category/nature%20katalog.png" alt="Random Name" width="200px" height="200px">
+                    <div class="nature"><!--<img src="image/category/nature%20katalog2.png" style="margin-top: 22px"> --></div></a>
+            </div>
+            <div class="col-sm-6">
+                <p><strong></strong></p>
+              <a class="overlay" id="button4" href="#content4">
+                  <img src="image/category/romantic.png" alt="Random Name" width="200px" height="200px" style="margin-top: 20px">
+                  <div class="romantic"><!--<img src="image/category/romantic2.png" style="margin-top: 22px"> --></div></a> 
+            </div>
+        </div><br><br>
+    <!--CONTENT BEACH-->
+    <div id="content1">
+    <div class="row" >
+        <h1 align="left" style="color: #3ac3c1; font-family: alexis">FIY</h1>
+        <p class="definisi" align="left" style="margin-left: 50px;">Indonesia is known as the largest archipelagic country in the world, with an area of 1,904,569 km2 and the number of islands as many as 17,508 pieces.<br><br>
+
+        Indonesia lies on the equator and belongs to Southeast Asia, flanked by two continents, Asia and Australia and two oceans, the Pacific and the Indies. Therefore, Indonesia also referred to as 
+        Nusantara (Archipelago Islands).</p>
+    </div><br>
+    <h1 align="left">1. PINK BEACH</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6" >
+                <p class="definisi1" align="left">Pink Beach Lombok is one of the tourist destinations in East Lombok is increasingly popular 
+                because it has a natural beauty and uniqueness of pink sand.
+                <br> <br>
+                The real name is Tangsi Beach with a length of about 1.5 km with a coastline of 6 meters in the surrounding hills that form coves and in the sea there are 
+                several small islands called gilis.</p>
+            </div>
+            <div class="col-x-10">
+                <img src="image/category/pantai%20pink.jpg" width="300px" height="200px" style="margin-top: 15px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <!--<a href="" style="border: 5px solid; background-color: aqua">Buy Ticket</a>-->
+                <a href="https://www.traveloka.com/en-id/flight"><button type="button" href="index.html">TICKET</button></a>
+                <a class="peta" href="https://goo.gl/maps/xGU2hTYVhFn">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="pantaipink" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--2-->
+    <h1 align="left">2. Karimun Jawa</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">
+                Karimunjawa is an archipelago in the Java Sea that belongs to Jepara regency, Central Java. With a land area of ± 1,500 hectares and a water ± 110,000 hectares, Karimunjawa is now developed into a charm of Marine Park tourism that began to favor a lot of local and foreign tourists.<br><br>
+
+                Based on the legend circulating in the archipelago, this island was discovered by Sunan Muria. The legend revolves around Sunan Muria who is concerned over the mischief of his son, Amir Hasan. With the intention of educating, Sunan Muria then ordered his son to go to an island that appears "kremun-kremun" (escape) from the top of Mount Muria so that the child can deepen and develop his religious knowledge. Because it looks "kremun-kremun" then called the island is Karimun Island.</p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/Karimun%20Jawa.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a href="https://www.traveloka.com/en-id/flight"><button type="button" href="index.html">TICKET</button></a>
+                <a class="peta" href="https://goo.gl/maps/RfhUdHMbLgk">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="karimun" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--3-->
+    <h1 align="left">3. PANTAI JOGAN</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Jogan Beach, a hidden beach in Yogyakarta that is unique. Because on this beach there is a waterfall that is located dibibir beach. In addition to unique jogan beach is still natural and quiet visitors.<br><br>
+
+                The phenomenal waterfall of jogan beach is almost never dry, When the dry season there is still water that flows just a very small debit. Time to visit this beach is best when the transition between the rainy season to the dry season.<br><br>
+                
+                In jogan beach, to enjoy the splash of jogan beach waterfall, visitors must descend down the cliff by climbing from karnag to coral and as a grip mounted wood to hold on.
+
+                .</p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/pantai%20jogan.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a href="https://www.traveloka.com/en-id/flight"><button type="button" href="index.html">TICKET</button></a>
+                <a class="peta" href="https://goo.gl/maps/sLsXDmRZjfk">
+                    <img src="image/category/maps.png">
+                </a>
+            </div>
+            <div id="jogan" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--4-->
+    <h1 align="left">4. PANTAI NGLAMBOR</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Want to snorkel in Yogya? Beach Nglambor is the place. Usually it is not the mind to snorkel on the south coast in Yogyakarta, because the waves are great with strong currents.It turns out there are beach spot for snorkeling in Yogya; Beach Nglambor.<br><br>
+
+                This unique beach is shaped like a small lagoon, so the water flow is relatively quieter than the other shoreline that is open off. However, we still have to be careful because of the nature of the strong south coast. Water on the beach is also very clear, so while snorkeling ntar we can see clearly the various fish and marine life in the surrounding coral reefs.<br><br>
+
+                On this beach there are two large rocks, watu kalong and watu kangkul, which is fixed in the mouth of the beach. Because of the position of these two rocks the waves on the beach Nglambor not so great.
+
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/pantai%20nglambor.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a href="https://www.traveloka.com/en-id/flight"><button type="button" href="index.html">TICKET</button></a>
+                <a class="peta" href="https://goo.gl/maps/5Nayu1oDTm62">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="nglambor" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--5-->
+    <h1 align="left">5. PANTAI KUTA</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Kuta Beach is a tourism place located in Kuta district, south of Denpasar City, Bali, Indonesia. This area is a tourist destination of foreign tourists and has become a mainstay tourist attraction of the island of Bali since the early 1970s. Kuta Beach is often referred to as sunset beach (sunset beach) as opposed to Sanur beach. In addition, I Gusti Ngurah Rai Airfield is located not far from Kuta.<br><br>
+
+                Before becoming a tourist attraction, Kuta is a trading port where local products are traded to buyers from outside Bali. In the 19th century, Mads Lange, a Danish trader, came to Bali and established a trading base in Kuta. He is an expert in negotiating himself well-known among Balinese and Dutch kings.<br><br>
+
+                Furthermore, Hugh Mahbett published a book entitled "Praise to Kuta" which invites local people to prepare tourist accommodation facilities. The goal is to anticipate the explosion of tourists visiting Bali. The book then inspired many people to build tourist facilities such as lodging, restaurants and entertainment venues.</p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/pantai%20kute.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a href="https://www.traveloka.com/en-id/flight"><button type="button" href="index.html">TICKET</button></a>
+                <a class="peta" href="https://goo.gl/maps/a5MwqQEo74z">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="kuta" style="width:100%;height:400px;"></div>
+        </div>
+    </div>
+    </div>
+    <!--CONTENT FAMILY-->
+    <div id="content2">
+    <div class="row" >
+        <h1 align="left" style="color: #3ac3c1; font-family: alexis">FIY</h1>
+        <p class="definisi" align="left" style="margin-left: 50px;">Indonesia is known as the largest archipelagic country in the world, with an area of 1,904,569 km2 and the number of islands as many as 17,508 pieces.<br><br>
+
+        Indonesia lies on the equator and belongs to Southeast Asia, flanked by two continents, Asia and Australia and two oceans, the Pacific and the Indies. Therefore, Indonesia also referred to as 
+        Nusantara (Archipelago Islands).</p>
+    </div><br>
+    <h1 align="left">1. JOGJA BAY</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6" >
+                <p class="definisi1" align="left">Jogja Bay Waterpark is a new waterpark in Jogjakarta (just 2 years old). For entry tickets for us people of Jakarta is not much different with other waterpark equivalent (125 thousand during peak season). There is a locker rental and a gazebo rental at an additional cost. For his own ware there are some fairly extreme slides, no need to rent tires because the tires are available near the slide area.
+                    <br><br>
+                In addition there is a current pool, wave pool that he said was made a simulation of the tsunami, big enough indeed but the condition is still safe to play water. It is recommended for those who bring children under 7 years old to be equipped with live vest, because when the waves appear, the water depth can reach 2 meters more.
+                    <br><br>
+                For food and drink not allowed to be brought in, bags were searched in front of the entrance. whereas if buy inside is quite expensive if for the culinary size of Jogjakarta.
+                </p>
+            </div>
+            <div class="col-x-10">
+                <img src="image/category/Family/jogjabay.jpg" width="300px" height="200px" style="margin-top: 15px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/cTpR5T4mu3P2">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="jogjabay" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--2-->
+    <h1 align="left">2. UPSIDE DOWN</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">
+                Upside Down World Jogja is a vehicle for self-portrait and wefie ria with anti gravity effects from behind the lens. In Upside Down World Jogja there are 12 different spots that we can create a scene with a unique style because there is a room that diverse upside down. Here also we can creativity to get the best photo pose and make us more cool.
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Family/upside%20down.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/gcU9jqAymR72">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="upsidedown" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--3-->
+    <h1 align="left">3. ANCOL</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Taman Impian Jaya Ancol is a tourist attraction in North Jakarta. As a community of renewal of people's life that became the pride of the nation. Always create a better social environment through quality entertainment offerings of art, culture and knowledge, in order to realize the Life Re-Creation community which is the nation's pride.
+                    <br><br>
+                Taman Impian Jaya Ancol itself has many rides like beach and park, fantasy world (dufan), atlantis, ocean rink, sea world, mermaid cottages, ancol golf course, marina, art market, retail ,, hailai executive club, cable car ( gondolas), bowling, culinary tours, and much more.
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Family/ancol.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/vDgy28KJQQq">
+                    <img src="image/category/maps.png">
+                </a>
+            </div>
+            <div id="ancol2" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--4-->
+    <h1 align="left">4. TAMAN NASIONAL WAY KAMBAS</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">What is the first thing that comes to your mind when you hear the word Lampung? Her fragrant coffee and her famous elephant captivity? Yes, no one, Lampung is indeed one tourist destination that is right for you who want to see the captivity of this large-bodied mammal. It is the Way Kambas National Park located in Labuhan Timur Subdistrict, Lampung. Tourist attractions run by the Ministry of Forestry was first built in 1985 and is the first elephant school in Indonesia. In addition to a place of conservation and training of elephants, in TNWK there is also International Rhino Foundation which functioned as a breeding ground for rhinoceros from extinction. To get here, you will only be charged a ticket of Rp30,000 per person. Very cheap, is not it?
+
+
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Family/taman%20nasional%20way%20kambas.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/BKRhLN4wdHU2">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="waykambas" style="width:100%;height:400px;"></div>
+        </div>
+    </div><br><br>
+    <!--5-->
+    <h1 align="left">5. KOTA LAMA</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Semarang city is the capital of Central Java Province. Semarang itself is a city that is quite unique because it has a variety of tourist attractions, ranging from historical tours, nature tourism, cultural tourism, culinary, and so forth. Well, one of the historical sights in Semarang is quite famous and still visited by tourists to this day is the Old Town area. In ancient times, the colonial Dutch colonial heritage area is a trade center with an area of about 31 hectares. Here, many ancient Dutch architectural buildings are full of historical value, among them are Tawang Station, Tawang Water Polder, Blenduk Church, Mberok Bridge, and shopping area. Also because the city is designed like the cities in the Netherlands, the Old Town area of Semarang dubbed The Little Netherlands.
+</p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Family/kota%20lama.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/XwfeEXkEigx">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+            <div id="kotatua" style="width:100%;height:400px;"></div>
+        </div>
+    </div>
+    </div>
+    <!--CONTENT NATURE-->
+    <div id="content3">
+    <div class="row" >
+        <h1 align="left" style="color: #3ac3c1; font-family: alexis">FIY</h1>
+        <p class="definisi" align="left" style="margin-left: 50px;">Indonesia is known as the largest archipelagic country in the world, with an area of 1,904,569 km2 and the number of islands as many as 17,508 pieces.<br><br>
+
+        Indonesia lies on the equator and belongs to Southeast Asia, flanked by two continents, Asia and Australia and two oceans, the Pacific and the Indies. Therefore, Indonesia also referred to as 
+        Nusantara (Archipelago Islands).</p>
+    </div><br>
+    <h1 align="left">1. WONOSOBO</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6" >
+                <p class="definisi1" align="left">Wonosobo is a district in Central Java Province. The capital is Wonosobo. It is adjacent to Temanggung and Magelang regencies in the east, Purworejo regency in the south, Kebumen regency and Banjarnegara regency in the west, and Batang regency and Kendal regency in the north.
+                        Wonosobo district stood July 24, 1825 as the district under the Sultanate of Yogyakarta after the battle in the Diponegoro War. Kyai Moh. Ngampah, who helped Diponegoro, was appointed as the first bupati with the title of Kanjeng Raden Tumenggung (K.R.T.) Setjonegoro.
+                        Most of Wonosobo regency is mountainous. East (border with Temanggung Regency) there are two volcanoes: Gunung Sindoro (3,136 meters) and Mount Sumbing (3,371 meters). The northern region is part of the Dieng Plateau, with its peak Mount Prahu (2,565 meters). To the south, there is Wadaslintang Reservoir.
+                        The capital of Wonosobo regency is in the middle of the Regency area, which is the upstream area of ??Kali Serayu. Wonosobo crossed the provincial road connecting Semarang-Purwokerto.
+                <br> <br>
+                        Most of Wonosobo regency is mountainous. East (border with Temanggung Regency) there are two volcanoes: Gunung Sindoro (3,136 meters) and Mount Sumbing (3,371 meters). The northern region is part of the Dieng Plateau, with its peak Mount Prahu (2,565 meters). To the south, there is Wadaslintang Reservoir.
+                        The capital of Wonosobo regency is in the middle of the Regency area, which is the upstream area of ??Kali Serayu. Wonosobo crossed the provincial road connecting Semarang-Purwokerto.<br><br></p>
+            </div>
+            <div class="col-x-10">
+                <img src="image/category/Nature/wonosobo.jpg" width="300px" height="200px" style="margin-top: 15px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/fVUfbovSTQu">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--2-->
+    <h1 align="left">2. HUTAN PINUS MANGUNAN</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">
+                        Puncak Mangunan Forest is part of the Mangunan Forest Management Resort (RPH) located not far from Imogiri, Bantul, Yogyakarta. Therefore, people often call it the name of Imogiri Pine Forest. In this area, travelers can see the row of pine trees that erect soaring beautifully.
+                        Thousands of pine trees in the Imogiri Pine Forest stand upright in an area of 500 Ha. When the wind blows, the leaves will emit a distinctive aroma of pine forest is sharp. No wonder if many are looking for peace when visiting the Imogiri Pine Forest.<br><br>
+                        With a lush pine forest backdrop, you can get a Hollywood-style photo setting. Not only for pre wedding, but many travelers who come to the Imogiri Pine Forest with family or friends to take pictures there.<br><br></p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Nature/hutan pinus imogiri.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/T6hAr2bn2QD2">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--3-->
+    <h1 align="left">3. TANGKUBAN PERAHU</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Tangkuban Parahu or Mount Tangkuban Perahu is one of the mountains located in West Java Province, Indonesia. Approximately 20 km to the north of Bandung City, with lush pine trees and expanse of tea gardens in the vicinity, Mount Tangkuban Perahu has a height of 2,084 meters. The shape of this mountain is Stratovulcano with an eruption center that moves from east to west. The type of rock that is released through the eruption is mostly lava and sulfur, the mineral released is sulfur sulfur, a mineral that is released when the inactive volcano is sulfur vapor. The area of Gunung Tangkuban Perahu is managed by Perum Perhutanan. Its daily average temperature is 17 ° C at noon and 2 ° C at night.<br><br>
+
+                The phenomenal waterfall of jogan beach is almost never dry, When the dry season there is still water that flows just a very small debit. Time to visit this beach is best when the transition between the rainy season to the dry season.<br><br>
+                Mount Tangkuban Perahu has a forest area of Dipterocarp Hill, Upper Dipterocarp Forest, Montane forest, and Ericaceous Forest or mountain forest.<br><br></p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Nature/tangkuban perahu.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/gBZ2sjCZ1Vo">
+                    <img src="image/category/maps.png">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--4-->
+    <h1 align="left">4. BUKIT TRANGGULASIH</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">The slopes of Mount Slamet in the northern city of Purwokerto save a variety of hidden panoramic beauty. Yes, some areas near Mount Slamet will not be separated with a variety of landscapes landscapes of various shapes.
+                        Baturraden is one such example. Located under Mount Slamet, Baturraden Loka Tour presents a variety of natural attractions and also offers some educational rides for the surrounding community, tourists who come from domestic and even abroad.<br><br>
+
+                        But who would have thought if we go deeper around the foot of Mount Slamet there is one hill that presents the charm of the landscape that is not less interesting with Loka Tour Baturraden. The hill is called Bukit Tranggulasih.
+                        Tranggulasih Hill is located north of the city center and directly adjacent to Baturraden Sub-district, precisely the location of Tranggulasih Hill is located in Windujaya Village, Kedungbanteng Sub-district, Banyumas Regency.<br><br>
+
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Nature/bukit tranggulsih.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/XKQT1LfXwzv">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--5-->
+    <h1 align="left">5. DANAU TOBA</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Lake Toba is a large tekto-volcanic natural lake that occupies the caldera of a supervulkan. This lake has a length of about 100 kilometers, a width of about 30 kilometers, and a depth of up to 505 meters (16666 feet), located in North Sumatra Province, Indonesia. Lake Toba is the largest lake in Indonesia and Southeast Asia. In the middle of this lake there is a volcanic island called Samosir Island.<br><br>
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/Nature/danau toba.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/Usfow7nxBdt">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--CONTENT ROMANTIC-->
+    <div id="content4">
+    <div class="row" >
+        <h1 align="left" style="color: #3ac3c1; font-family: alexis">FIY</h1>
+        <p class="definisi" align="left" style="margin-left: 50px;">Indonesia is known as the largest archipelagic country in the world, with an area of 1,904,569 km2 and the number of islands as many as 17,508 pieces.<br><br>
+
+        Indonesia lies on the equator and belongs to Southeast Asia, flanked by two continents, Asia and Australia and two oceans, the Pacific and the Indies. Therefore, Indonesia also referred to as 
+        Nusantara (Archipelago Islands).</p>
+    </div><br>
+   <h1 align="left">1.BUKIT BINTANG</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6" >
+                <p class="definisi1" align="left">Located in a row of beautiful hills stretching southeast of Bantul, Bukit Dahromo enliven the tour in Mangunan with some really cool photo spots. Despite offering tours similar to the tourist attractions around Mangunan, but the location of Pintoe Langit Dahromo is worth a visit.
+                        In the tourist area Pintoe Sky is not only presents a spot of the Door alone, there is also kok spot photo wing model dragonflies and various other best photo spots.                        
+                <br> <br>
+                For you who want selfie with a partner with an affordable price, then this Sky Door can be the right choice.<br><br>
+            </p>
+            </div>
+            <div class="col-x-10">
+                <img src="image/category/romantic/pintu langit dahromo.jpg" width="300px" height="200px" style="margin-top: 15px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/tZeBRvmz1222">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--2-->
+    <h1 align="left">2. BUKIT LINTANG SEWU</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">
+                    Have you ever wondered where did the eucalyptus oil come from? No need to curious anymore, because in Bukit Lintang Sewu you will be served with panorama of eucalyptus forest is charming, cool and beautiful.
+                    If lucky, the Alap-Alap Bird (a kind of small eagle), you can see passing in a row of eucalyptus trees, to prey on quails nesting in the roots of eucalyptus trees.<br><br>
+
+                    The name of Bukit Lintang Sewu is taken from the Java language which means "Bukit Seribu Bintang". Because in addition to seeing the beautiful sunset, from Bukit Lintang Sewu we can also see the beauty of the city lights flickering when the night that looks like a star on earth.
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/romantic/bukit lintang.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/bBd3bqzS2Zo">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--3-->
+    <h1 align="left">3. PULAU CINTA</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">As the name is Cinta Island, this one island will definitely make your partner more in love. The island is located in Tomini Bay, Gorontalo, North Sulawesi has some cottages that circle to form the heart, that's why this place is called Love Island.<br><br>
+
+                    Here you will be presented with exotic blue sea water with white sand that is so tempting. So no need all the way to the Maldives, because Indonesia also has an exotic marine tourism nan romantic.<br><br>
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/romantic/pulau cinta.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/1UK5G2MdMu82">
+                    <img src="image/category/maps.png">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--4-->
+    <h1 align="left">4. GILI TRAWANGAN</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Lombok is famous for its beautiful beaches. One of them is Gili Trawangan. Gili Trawangan is one of the coastal tourist destinations suitable for you to visit with your partner.<br><br>
+
+                    This beach presents a panoramic view of natural beauty. Not only blue sea water and seductive white sand, Gili Trawangan has a beautiful panorama under the sea for you to enjoy. Moments of romance you can create with your partner here. You can enjoy the beautiful evening sky in Gili Trawangan while sitting together on the swing is available there.<br><br>
+                </p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/romantic/gili trawangan.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/LdsHzTQWAHp">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    <!--5-->
+    <h1 align="left">5. PANTAI SAWANGAN</h1>
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <p class="definisi1" align="left">Not only Lombok is famous for its beautiful beaches, in Kebumen there is a beach behind the hill like a hidden paradise. The state of the beach here is really still natural. With the appearance of the blue sea and clear, sandy white sand and surrounded by hills really complete scenery.<br><br>
+
+                    For you who visit with your partner, must photograph in one of the latest spot that is rattan "I Love You" at dusk or early morning is really romantic moment.</p>
+            </div>
+            <div class="col-x-10" align="right" style="margin-top: 15px">
+                <img src="image/category/romantic/pantai sawangan.jpg" width="300px" height="200px">
+            </div>
+            <div class="col-xs-2 pull-right" align="right">
+                <a class="peta" href="https://goo.gl/maps/y6q4EGxuHDS2">
+                    <img src="image/category/maps.png" width="100px" height="100px">
+                </a>
+            </div>
+        </div>
+    </div><br><br>
+    </div>
+</div>
+    
+    
+    <!--FOOTER-->
+<footer class="">
+  <div align="center">
+        <a class="up-arrow" href="#pagetop" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        </a></div><br><br>
+    <div class="row" id="garis">
+  <div class="colum1" style="background-color:transparent;">
+      <img class="karakter2" src="image/index/karakter2.png" width="70%">
+  </div>
+    <div class="colum" style="background-color:transparent">
+        <P class="kakitext"><b>ABOUT US</b></P>
+        <p>CV Paradise Indonesia <br> presents various tourism and culture in indonesia </p>
+
+  </div>
+  <div class="colum" style="background-color:transparent;">
+    <ul>
+        <p class="kakitext"><b>CONTACT US</b></p>
+            <div class="row">
+                <img src="image/tw%20footer.png" width="30px"> @ParadiseIndo
+            </div>
+        <div class="row">
+                <img src="image/fb%20footer.png" width="30px" style="margin-top: 10px;"> Pardise Indonesia
+        </div>
+    </ul>
+  </div>
+  <div class="colum" style="background-color:transparent">
+        <a href="faq.html"><p class="kakitext"><b>FAQ</b></p></a>
+
+  </div>
+<!--    <div class="colum" style="background-color:transparent">
+        <b><li class="kakitext">DEVELOPER</li></b>
+        <ul><p>DHIMAS ABDI PRATAMA</p></ul>
+        <ul>
+            <ul>
+            <li>PROGRAMMER</li>
+            <li>(+62)81946212889</li>
+            <li>dhimasabdi23@gmail.com</li>
+
+            </ul>
+        </ul>
+            
+        </div>
+        <div class="colum" style="background-color:transparent">
+        <li style="color: #3ac3c1" class="kakitext">DEVELOPER</li>
+        <ul><p>YUSUF BACHTIAR</p></ul>
+        <ul>
+            <ul>
+            <li>DESIGNER</li>
+            <li>(+62)85848444930</li>
+            <li>ybachtiar72@gmail.com</li>
+
+            </ul>
+        </ul>
+            
+    </div>
+        <div class="colum" style="background-color:transparent">
+        <li style="color: #3ac3c1" class="kakitext">DEVELOPER</li>
+        <p>RAHMAT HIDAYAT</p>
+        <ul>
+            <ul>
+            <li>PROPOSLER</li>
+            <li>(+62) GAK PUNYA HP</li>
+            <li>gakpunyaemail@gmail.com</li>
+            </ul>    
+        </ul>
+            
+    </div>-->
+</div>
+</footer>
+    
+    <!--JQUERY-->
+    <script>
+$(document).ready(function(){
+    // Initialize Tooltip
+    $('[data-toggle="tooltip"]').tooltip(); 
+})
+</script>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-100px";
+          }
+          prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <script>
+    function myMap() {
+        var myCenter1 = new google.maps.LatLng(-8.8597034, 116.5800074);
+        var mapProp1 = {center:myCenter1, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map1 = new google.maps.Map(document.getElementById("pantaipink"),mapProp1);
+        var marker = new google.maps.Marker({position:myCenter1});
+        marker.setMap(map1);
+        
+        
+        var myCenter2 = new google.maps.LatLng(-5.8335588, 110.4506046);
+        var mapProp2 = {center:myCenter2, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map2 = new google.maps.Map(document.getElementById("karimun"),mapProp2);
+        var marker = new google.maps.Marker({position:myCenter2});
+        marker.setMap(map2);
+        
+        var myCenter3 = new google.maps.LatLng(-8.1801139, 110.6763631);
+        var mapProp3 = {center:myCenter3, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map3 = new google.maps.Map(document.getElementById("jogan"),mapProp3);
+        var marker = new google.maps.Marker({position:myCenter3});
+        marker.setMap(map3);
+        
+        var myCenter4 = new google.maps.LatLng(-8.1827028, 110.6792399);
+        var mapProp4 = {center:myCenter4, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map4 = new google.maps.Map(document.getElementById("nglambor"),mapProp4);
+        var marker = new google.maps.Marker({position:myCenter4});
+        marker.setMap(map4);
+        
+        var myCenter5 = new google.maps.LatLng(-8.7202498, 115.1691762);
+        var mapProp5 = {center:myCenter5, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map5 = new google.maps.Map(document.getElementById("kuta"),mapProp5);
+        var marker = new google.maps.Marker({position:myCenter5});
+        marker.setMap(map5);
+        
+        var myCenter6 = new google.maps.LatLng(-7.748437, 110.418853);
+        var mapProp6 = {center:myCenter6, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map6 = new google.maps.Map(document.getElementById("jogjabay"),mapProp6);
+        var marker = new google.maps.Marker({position:myCenter6});
+        marker.setMap(map6);
+        
+        var myCenter7 = new google.maps.LatLng(-7.76368, 110.41936);
+        var mapProp7 = {center:myCenter7, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map7 = new google.maps.Map(document.getElementById("upsidedown"),mapProp7);
+        var marker = new google.maps.Marker({position:myCenter7});
+        marker.setMap(map7);
+        
+        var myCenter8 = new google.maps.LatLng(-6.125554, 106.8381656);
+        var mapProp8 = {center:myCenter8, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map8 = new google.maps.Map(document.getElementById("ancol2"),mapProp8);
+        var marker = new google.maps.Marker({position:myCenter8});
+        marker.setMap(map8);
+        
+        var myCenter9 = new google.maps.LatLng(-4.9275758, 105.7769283);
+        var mapProp9 = {center:myCenter9, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map9 = new google.maps.Map(document.getElementById("waykambas"),mapProp9);
+        var marker1 = new google.maps.Marker({position:myCenter9});
+        marker.setMap(map9);      
+        
+        var myCenter10 = new google.maps.LatLng(-6.9683741, 110.4251997);
+        var mapProp10 = {center:myCenter10, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map10 = new google.maps.Map(document.getElementById("kotatua"),mapProp10);
+        var marker = new google.maps.Marker({position:myCenter10});
+        marker.setMap(map10);
+        
+    }
+    </script>
+    
+    
+    
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXRsyCF1pzg_AnOtUL2tcn0ASCX8phkIQ&callback=myMap"></script>
+
+</body>
+</html>

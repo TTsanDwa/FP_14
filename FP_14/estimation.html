@@ -1,0 +1,290 @@
+<html lang="en">
+<head>
+    <title>Paradise Indonesia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .container{
+            /*padding: 80px 120px;*/
+            position: relative;
+            margin-top: 20;
+        }
+        .container img {
+        width: 50%;
+        height: auto;
+        }
+        .logo{
+            height: auto;
+        }
+        .navbar-inverse{
+            background-color: transparent;
+        }
+        .menu{
+            color: white;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            border: 0;
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+        .navbar li a, .navbar{ 
+            color: white;
+        }
+        .navbar-nav li a:hover {
+            background-color: transparent;
+            border: 1px solid black;
+        }
+        .navbar-nav li.active a {
+            color: #fff;
+            background-color:#29292c;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+        footer {
+            background-color: #2d2d30;
+            color: #f5f5f5;
+            padding: 32px;
+            margin-top: 20px
+        }
+        footer a {
+            color: #f5f5f5;
+        }
+        footer a:hover {
+            color: #777;
+            text-decoration: none;
+        }
+        body{
+            background-image: url(image/bg%2010000.jpg);
+        }
+        .content2{
+            background-color: greenyellow;
+        }
+        footer{
+            background-color: #3ac3c1;
+        }
+        .colum {
+            float: left;
+            width: 15%;
+            padding: 10px;
+            height: 100px;
+            margin-top: -30px;
+        }
+        .colum1 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 100px;
+        }
+        #garis:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .karakter2{
+            margin-top: -399px;
+            margin-left: 30px;
+            
+        }
+        .kakitext{
+            font-size: 24px;
+        }
+        .pilih{
+            margin-top: 290px;
+        }
+        .definisi1{
+            margin-top: 15px;
+            margin-left: -10px;
+            font-size: 22px;
+            font-family: calibri;
+        }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+    <!--JQUERY-->
+<script>
+    $(document).ready(function(){
+        /*$('body').scrollspy({target: "#tombol", offset: 50});*/ 
+        $("a, footer a[href='pagetop']").on('click', function(Event){
+            if(this.hash !== ""){
+                event.preventDefault();
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    window.location.hash = hash;
+                });
+            }  
+        });
+    });
+    </script>
+</head>
+<body id="pagetop">
+    
+    
+    <!--CONTENT MENU-->
+<div class="container text-center">
+    <img src="image/logo%20estimation.png">
+      <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <div class="col-sm-6" align="left" style="margin-top: 15px"> 
+<!--                <div ng-repeat='item in items'>
+                  <span>{{item.title}}</span>
+                  <input ng-model='item.quantity'>
+                  <span>{{item.price | currency}}</span>
+                  <span>{{item.price * item.quantity | currency}}</span>
+                  <button ng-click="remove($index)">Remove</button>
+                </div>-->
+                <form>
+                <div ng-app="" ng-init="lokasi=50000;lemah=150000;kuat=300000;roda4=100000;roda2=50000;yeah=50000;yack=15000">
+                <div class="col-sm-6" align="left"> DESTINATION (a destination you will go)</div>
+                  <select ng-model="myVar">
+                    <option value="">
+                    <option value="yogyakarta">DIY
+                    <option value="yogyakarta">DKI JAKARTA
+                    <option value="yogyakarta">BANTEN
+                    <option value="yogyakarta">JAWA BARAT
+                    <option value="yogyakarta">JAWA TENGAH
+                    <option value="yogyakarta">JAWA TIMUR
+                  </select>
+                 
+                    <p><div class="col-sm-6" align="left">TOURS (number of tours you will visit)</div> <input type="text" ng-model="tour"></p>
+
+                    <p><div class="col-sm-6" align="left">HOTEL (stay for a day)</div>
+                       
+                    <input type="checkbox" ng-model="hotel1">  <span class="glyphicon glyphicon-star">1-3</span> &nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="hotel2">  <span class="glyphicon glyphicon-star">4-5</span>
+                    <P><div class="col-sm-6" align="center"></div><p ng-show="hotel1"><input type="text" ng-model="jelek" ng-init="jelek=0" ></p>
+                    <p ng-show="hotel2"><input type="text" ng-model="bagus" ng-init="bagus=0"></p>
+                    <br><br>
+                  
+                    <p><div class="col-sm-6" align="left">TRANSPORTATION (rent for a day)</div>
+                    <input type="checkbox" ng-model="transport1"> CAR &nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="transport2"> MOTORCYCLE
+                    <P><div class="col-sm-6" align="center"></div><p ng-show="transport1"><input type="text" ng-model="mobil" ng-init="mobil=0"></p>
+                    <p ng-show="transport2"><input type="text" ng-model="motor" ng-init="motor=0"></p>
+                    <br><br>
+                    
+                    <p><div class="col-sm-6" align="left">FOOD (eat during vacation)</div>
+                    <input type="checkbox" ng-model="food1"> ORGASMIC &nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="food2"> RUSTIC
+                    <P><div class="col-sm-6" align="center"></div><p ng-show="food1"><input type="text" ng-model="enak" ng-init="enak=0"></p>
+                    <p ng-show="food2"><input type="text" ng-model="biasa" ng-init="biasa=0"></p>
+                        
+                    <br><br>
+                    <p><div class="col-sm-6" align="left">ESTIMATION</div> {{ (tour*lokasi)+(jelek*lemah)+(bagus*kuat)+(mobil*roda4)+(motor*roda2)+(enak*yeah)+(biasa*yack)}}</p>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div><br><br>
+</div>
+    
+    <!--FOOTER-->
+<footer class="">
+  <div align="center">
+        <a class="up-arrow" href="#pagetop" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        </a></div><br><br>
+    <div class="row" id="garis">
+  <div class="colum1" style="background-color:transparent;">
+      <img class="karakter2" src="image/index/karakter2.png" width="70%">
+  </div>
+    <div class="colum" style="background-color:transparent">
+        <P class="kakitext"><b>ABOUT US</b></P>
+        <p>CV Paradise Indonesia <br> presents various tourism and culture in indonesia </p>
+
+  </div>
+  <div class="colum" style="background-color:transparent;">
+    <ul>
+        <p class="kakitext"><b>CONTACT US</b></p>
+            <div class="row">
+                <img src="image/tw%20footer.png" width="30px"> @ParadiseIndo
+            </div>
+        <div class="row">
+                <img src="image/fb%20footer.png" width="30px" style="margin-top: 10px;"> Pardise Indonesia
+        </div>
+    </ul>
+  </div>
+  <div class="colum" style="background-color:transparent">
+        <a href="faq.html"><p class="kakitext"><b>FAQ</b></p></a>
+
+  </div>
+<!--    <div class="colum" style="background-color:transparent">
+        <b><li class="kakitext">DEVELOPER</li></b>
+        <ul><p>DHIMAS ABDI PRATAMA</p></ul>
+        <ul>
+            <ul>
+            <li>PROGRAMMER</li>
+            <li>(+62)81946212889</li>
+            <li>dhimasabdi23@gmail.com</li>
+
+            </ul>
+        </ul>
+            
+        </div>
+        <div class="colum" style="background-color:transparent">
+        <li style="color: #3ac3c1" class="kakitext">DEVELOPER</li>
+        <ul><p>YUSUF BACHTIAR</p></ul>
+        <ul>
+            <ul>
+            <li>DESIGNER</li>
+            <li>(+62)85848444930</li>
+            <li>ybachtiar72@gmail.com</li>
+
+            </ul>
+        </ul>
+            
+    </div>
+        <div class="colum" style="background-color:transparent">
+        <li style="color: #3ac3c1" class="kakitext">DEVELOPER</li>
+        <p>RAHMAT HIDAYAT</p>
+        <ul>
+            <ul>
+            <li>PROPOSLER</li>
+            <li>(+62) GAK PUNYA HP</li>
+            <li>gakpunyaemail@gmail.com</li>
+            </ul>    
+        </ul>
+            
+    </div>-->
+</div>
+</footer>
+    
+    <!--JQUERY-->
+    <script>
+$(document).ready(function(){
+    // Initialize Tooltip
+    $('[data-toggle="tooltip"]').tooltip(); 
+})
+</script>
+<!--    <script>
+  function CartController($scope) {
+    $scope.items = [
+      {title: 'Tour', quantity: 0, price: 9.99},
+      {title: 'Polka dots', quantity: 17, price: 12.95},
+      {title: 'Pebbles', quantity: 5, price: 6.95}
+    ];
+    $scope.remove = function(index) {
+      $scope.items.splice(index, 1);
+    };
+  }
+</script>
+    <script>
+    app.controller('estimasi', function($scope){
+        $scope.tour ={quantity ,price: 50000}
+    })
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>-->
+</body>
+</html>
