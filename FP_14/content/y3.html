@@ -1,0 +1,394 @@
+<html lang="en">
+<head>
+    <title>Paradise Indonesia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container{
+            /*padding: 80px 120px;*/
+            position: relative;
+            margin-top: 20;
+        }
+        .container img {
+        width: 50%;
+        height: auto;
+        }
+        .logo{
+            height: auto;
+        }
+        .navbar-inverse{
+            background-color: transparent;
+        }
+        .menu{
+            color: white;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+        .navbar {
+            margin-bottom: 0;
+            border: 0;
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+        .navbar li a, .navbar{ 
+            color: white;
+        }
+        .navbar-nav li a:hover {
+            background-color: transparent;
+            border: 1px solid black;
+        }
+        .navbar-nav li.active a {
+            color: #fff;
+            background-color:#29292c;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+        footer {
+            background-color: #2d2d30;
+            color: #f5f5f5;
+            padding: 32px;
+            margin-top: 20px
+        }
+        footer a {
+            color: #f5f5f5;
+        }
+        footer a:hover {
+            color: #777;
+            text-decoration: none;
+        }
+        .vacation{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 29px;
+            margin-left: 152px;
+            height: 90%;
+            width: 50%;
+            opacity: 0;
+            transition: .2s ease;
+            background-image: url(image/trending/vacationland%20klik.png);
+            background-size: 280px 280px;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+        .overlay:hover .vacation{
+            opacity: 1;
+        }
+       .culture{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 29px;
+            margin-left: 152px;
+            height: 90%;
+            width: 50%;
+            opacity: 0;
+            transition: .2s ease;
+            background-image: url(image/trending/culture%20klik.png);
+            background-size: 280px 280px;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+        .overlay:hover .culture{
+            opacity: 1;
+        }
+        body{
+            background-image: url(image/bg%2010000.jpg);
+        }
+        .content2{
+            background-color: greenyellow;
+        }
+        footer{
+            background-color: #3ac3c1;
+        }
+        .colum {
+            float: left;
+            width: 26%;
+            padding: 10px;
+            height: 100px;
+            margin-top: -30px;
+        }
+        .colum1 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 100px;
+        }
+        #garis:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .karakter2{
+            margin-top: -399px;
+            margin-left: 30px;
+            
+        }
+        .kakitext{
+            font-size: 24px;
+        }
+        .pilih{
+            margin-top: 290px;
+        }
+        .definisi1{
+            margin-top: 15px;
+            margin-left: -10px;
+            font-size: 22px;
+            font-family: calibri;
+        }
+        /*RATING*/
+        .rating { 
+          border: none;
+            float:left;
+        }
+
+        .rating > input { display: none; } 
+        .rating > label:before { 
+          margin: 5px;
+          font-size: 1.25em;
+          font-family: FontAwesome;
+          display: inline-block;
+          content: "\f005";
+        }
+
+        .rating > .half:before { 
+          content: "\f089";
+          position: absolute;
+        }
+
+        .rating > label { 
+          color: #ddd; 
+         float: right; 
+        }
+
+/***** CSS untuk hover nya *****/
+
+        .rating > input:checked ~ label, /* memperlihatkan warna emas pada saat di klik */
+        .rating:not(:checked) > label:hover, /* hover untuk star berikutnya */
+        .rating:not(:checked) > label:hover ~ label { color:orange;  } /* hover untuk star sebelumnya  */
+
+        .rating > input:checked + label:hover, /* hover ketika mengganti rating */
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label, /* seleksi hover */
+        .rating > input:checked ~ label:hover ~ label { color: green; }
+
+    </style>
+    
+    <!--JQUERY-->
+    <script>
+    $(document).ready(function(){
+        /*$('body').scrollspy({target: "#tombol", offset: 50});*/ 
+        $("a, footer a[href='pagetop']").on('click', function(Event){
+            if(this.hash !== ""){
+                event.preventDefault();
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    window.location.hash = hash;
+                });
+            }  
+        });
+    });
+    </script>
+</head>
+<body id="pagetop">
+    
+    <!--NAVBAR-->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color: grey">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="../after.html"><img src="image/index/home.png" width="auto" height="60px" style="margin-top: 15px;"> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a class="menu" href="../Category.html" style="color: white"><b>CATEGORY</b></a></li>
+          <li><a class="menu" href="../trending.html" style="color: #3ac3c1"><b><u>TRENDING</u></b></a></li>
+          <li><a class="menu" href="../Login.html" style="color: white"><b>LOGIN</b></a></li>
+          <li><a class="menu" href="../estimation.html" style="color: white"><b>ESTIMATION</b></a></li>
+          <li><a class="menu" href="#" style="color: white"><b><span class="glyphicon glyphicon-search"></span></b></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+    <!--CONTENT Header-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="image/category/borobudur.jpg" alt="New York">
+        </div>
+
+        <div class="item">
+          <img src="image/category/air%20terjun%20geddad.jpg" alt="Chicago">
+        </div>
+
+        <div class="item">
+          <img src="image/category/merapi%20tour.jpg" alt="Los Angeles">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+</div>
+    
+    <!--CONTENT MENU-->
+<div class="container text-center">
+    <div class="row">
+        <img src="image/trending/trending.png" width="200px" height="200px">
+    </div><br><br>
+<div class="konten">
+    <div class="row" style="background-color: lightgrey">
+        <div class="container-fluid">
+            <img src="image/DIY/candi%20ratu%20boko.jpg" align="center" style="margin-top: 20px; margin-bottom: 20px; margin-left: 10px;">
+            <h1><span class="glyphicon glyphicon-star">9/10</span></h1>
+            <br><br>
+            <p class="definisi1" align="left" style="margin-top: 20px;">The site of Queen Baka or Candi Boko (Javanese language: Candhi Ratu Baka) is an archaeological site which is a complex of a number of remaining buildings located approximately 3 km south of the Prambanan Temple complex, 18 km east of Yogyakarta City or 50 km southwest City Surakarta, Central Java, Indonesia. The site of Queen Baka is situated on a hill at an altitude of 196 meters above sea level. The total area of ??the complex is about 25 ha. [1]
+<br><br>
+            This site displays the attributes as a place of activity or a residential site, but the exact function is not known clearly. [2] Ratu Boko is thought to have been used by people in the 8th century during the Sailendra (Rakai Panangkaran) of the Medang Kingdom (Mataram Hindu). Viewed from the pattern of laying the remains of buildings, allegedly this site is a former palace (king's palace). This opinion is based on the fact that the compound is not a temple or a building with a religious nature, but a fortified palace with evidence of the remains of a castle wall and a dry trench as a defensive structure. [3] Remnants of residential settlements are also found around the site.
+<br><br>
+            The name "Queen Baka" comes from the legend of the local community. Ratu Baka (Javanese, literal meaning: "king of stork") is the father of Loro Jonggrang, which is also the name of the main temple at the Prambanan Temple complex. This building complex is associated with local folk legend Loro Jonggrang. [1]
+<br><br>
+            Administratively, the site is located in two dukuh areas, Dukuh Dawung, Bokoharjo Village and Dukuh Sumberwatu, Sambireja Village, Prambanan Sub-district, Sleman Regency, Yogyakarta, Indonesia.
+
+            This site is nominated to UNESCO to become a World Heritage Site since 1995.
+
+
+
+                <br><br>
+            </p>
+                        <h1>Silahkan Berikan Rating Anda:</h1>
+            <fieldset class="rating" align="center">
+                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+            </fieldset>
+            <br><br>
+            <textarea name="comment" rows="5" cols="50" align="left"></textarea><br>
+            <input type="button" name="klik" value="Post" >
+        </div>
+    </div><br><br>
+</div>
+    </div>
+    
+    <!--FOOTER-->
+<footer class="">
+  <div align="center">
+        <a class="up-arrow" href="#pagetop" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        </a></div><br><br>
+    <div class="row" id="garis">
+  <div class="colum1" style="background-color:transparent;">
+      <img class="karakter2" src="image/index/karakter2.png" width="70%">
+  </div>
+    <div class="colum" style="background-color:transparent">
+        <P class="kakitext"><b>ABOUT US</b></P>
+        <p>CV Paradise Indonesia <br> presents various tourism and culture in indonesia </p>
+
+  </div>
+  <div class="colum" style="background-color:transparent;">
+    <ul>
+        <p class="kakitext"><b>CONTACT US</b></p>
+            <div class="row">
+                <img src="image/tw%20footer.png" width="30px"> @ParadiseIndo
+            </div>
+        <div class="row">
+                <img src="image/fb%20footer.png" width="30px" style="margin-top: 10px;"> Pardise Indonesia
+        </div>
+    </ul>
+  </div>
+  <div class="colum" style="background-color:transparent">
+        <a href="faq.html"><p class="kakitext"><b>FAQ</b></p></a>
+
+  </div>
+<!--    <div class="colum" style="background-color:transparent">
+        <b><li class="kakitext">DEVELOPER</li></b>
+        <ul><p>DHIMAS ABDI PRATAMA</p></ul>
+        <ul>
+            <ul>
+            <li>PROGRAMMER</li>
+            <li>(+62)81946212889</li>
+            <li>dhimasabdi23@gmail.com</li>
+
+            </ul>
+        </ul>
+            
+        </div>
+        <div class="colum" style="background-color:transparent">
+        <li style="color: #3ac3c1" class="kakitext">DEVELOPER</li>
+        <ul><p>YUSUF BACHTIAR</p></ul>
+        <ul>
+            <ul>
+            <li>DESIGNER</li>
+            <li>(+62)85848444930</li>
+            <li>ybachtiar72@gmail.com</li>
+
+            </ul>
+        </ul>
+            
+    </div>
+        <div class="colum" style="background-color:transparent">
+        <li style="color: #3ac3c1" class="kakitext">DEVELOPER</li>
+        <p>RAHMAT HIDAYAT</p>
+        <ul>
+            <ul>
+            <li>PROPOSLER</li>
+            <li>(+62) GAK PUNYA HP</li>
+            <li>gakpunyaemail@gmail.com</li>
+            </ul>    
+        </ul>
+            
+    </div>-->
+</div>
+</footer>
+    
+    <!--JQUERY-->
+    <script>
+$(document).ready(function(){
+    // Initialize Tooltip
+    $('[data-toggle="tooltip"]').tooltip(); 
+})
+</script>
+</body>
+</html>
