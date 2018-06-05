@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Desain Form Login Dengan Css</title>
+    <style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    }
+
+    body{
+        background-image: url(image/login/blur%20bg.jpg);
+        display: flex;
+        justify-content: center;
+    }
+
+    .konten{
+        background-image: url(image/signup/menu%20signup.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 750px;
+        height: 950px;
+        border-radius: 16px;
+        min-height: 256px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    .artikel{
+        margin-top: 250px;
+        color: #808080;
+    }
+
+    .grup{
+        margin: 30px 0;
+    }
+    .grup1{
+        margin-top: 100px;
+    }
+
+    label, input{
+        display: block;
+    }
+
+    label{
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+        #loglain{
+        width: 10%;
+            height: auto;
+        }
+
+    input[type="text"], input[type="password"]{
+        width: 450px;
+        height: 40px;
+        padding: 0 10px;
+        background: #eeeeee;
+        border:none;
+        border-radius: 10px;
+        color: #808080;
+    }
+    button[type="submit"]{
+        background: darkblue;
+        padding: 4px 16px;
+        position: center;
+        border: 1px solid black;
+        border-radius: 2px;
+        color: #fff;
+        cursor: pointer; 
+        width: 100px;
+        height: 40;
+            }
+    button[type="submit"]:hover{
+        background: #28a45e;
+    }
+    </style>
+        <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfnJl0UAAAAABJHbY5pM9yfEY_nDaikzoUJGhky'
+        });
+      };
+    </script>
+</head>
+<body>
+    <div id="id01" class="konten" align="center">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="artikel">
+            <form action="#" method="post">
+                <div class="grup">
+                    <input type="text" placeholder="Email" required>
+                </div>
+                <div class="grup">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="grup">
+                    <input type="password" placeholder="Password" required>
+                </div>
+          <form action="?" method="POST">
+      <div id="html_element"></div>
+    </form>
+      <br>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+                
+                <div class="grup" align="center">
+                    <button type="submit"><b>SIGNUP</b></button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    
+    <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == konten) {
+        konten.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
